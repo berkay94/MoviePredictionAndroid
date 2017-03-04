@@ -3,4 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="filmad">#ffff00</color>
+    <color name="filmsüre">#ffffff</color>
+    <color name="filmkonu">#ffffff</color>
+    <color name="basarı">#ffffff</color>
+    <color name="basrol">#ffffff</color>
+    <color name="acıklama">#ffffff</color>
+    <color name="filmtarih">#ffffff</color>
+    <color name="list_row_start_color">#00000000</color>
+    <color name="list_row_end_color">#00000000</color>
+    <color name="list_row_hover_start_color">#dddddd</color>
+    <color name="list_row_hover_end_color">#dddddd</color>
 </resources>

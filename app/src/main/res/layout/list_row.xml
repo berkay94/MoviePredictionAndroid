@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/arkaplan">
+
+
+    <com.android.volley.toolbox.NetworkImageView
+
+        android:id="@+id/filmicon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="17dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/filmtarih"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_alignBaseline="@+id/filmad"
+        android:layout_alignBottom="@+id/filmad"
+        android:layout_toRightOf="@+id/filmicon"
+        android:layout_toEndOf="@+id/filmicon"
+        android:textColor="@color/filmtarih" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/filmad"
+        android:layout_alignTop="@+id/filmicon"
+        android:layout_toRightOf="@+id/filmicon"
+        android:layout_toEndOf="@+id/filmicon"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:textColor="@color/filmad" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/filmsüre"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/filmad"
+        android:layout_alignLeft="@+id/filmad"
+        android:layout_alignStart="@+id/filmad"
+        android:textColor="@color/filmsüre" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/filmkonu"
+        android:layout_alignBaseline="@+id/filmsüre"
+        android:layout_alignBottom="@+id/filmsüre"
+        android:layout_alignLeft="@+id/filmtarih"
+        android:layout_alignStart="@+id/filmtarih"
+        android:textColor="@color/filmkonu" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/starr"
+        android:layout_marginTop="13dp"
+        android:id="@+id/filmoy"
+        android:layout_below="@+id/filmsüre"
+        android:layout_alignLeft="@+id/filmsüre"
+        android:layout_alignStart="@+id/filmsüre" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/basarı"
+        android:layout_alignTop="@+id/filmoy"
+        android:layout_toRightOf="@+id/filmoy"
+        android:layout_toEndOf="@+id/filmoy"
+        android:textColor="@color/basarı" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/basrol"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/filmicon"
+        android:layout_alignLeft="@+id/filmoy"
+        android:layout_alignStart="@+id/filmoy"
+        android:textColor="@color/basrol" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/acıklama"
+        android:layout_below="@+id/basrol"
+        android:layout_alignLeft="@+id/basrol"
+        android:layout_alignStart="@+id/basrol"
+        android:textColor="@color/acıklama" />
+
+</RelativeLayout>
