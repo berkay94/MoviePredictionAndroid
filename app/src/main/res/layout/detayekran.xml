@@ -101,34 +101,36 @@
         android:layout_toLeftOf="@+id/imageButton3"
         android:layout_toStartOf="@+id/imageButton3" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_marginTop="19dp"
-        android:id="@+id/filmafis"
+    <com.android.volley.toolbox.NetworkImageView
+
+        android:id="@+id/filmıcon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="18dp"
         android:layout_below="@+id/filmsüresi"
         android:layout_alignLeft="@+id/filmsüresi"
         android:layout_alignStart="@+id/filmsüresi" />
-
-    <VideoView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/filmafis"
-        android:layout_toRightOf="@+id/filmsüresi"
-        android:id="@+id/videoView"
-        android:layout_alignRight="@+id/imageButton3"
-        android:layout_alignEnd="@+id/imageButton3"
-        android:layout_alignBottom="@+id/filmafis" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/filmafis"
-        android:layout_alignLeft="@+id/filmafis"
-        android:layout_alignStart="@+id/filmafis"
-        android:layout_marginTop="24dp"
-        android:id="@+id/filmaciklama" />
+        android:id="@+id/filmaciklama"
+        android:layout_below="@+id/filmıcon"
+        android:layout_alignLeft="@+id/filmıcon"
+        android:layout_alignStart="@+id/filmıcon"
+        android:layout_marginTop="15dp" />
+
+    <VideoView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/videoView"
+        android:layout_alignTop="@+id/filmıcon"
+        android:layout_toRightOf="@+id/filmıcon"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_alignBottom="@+id/filmıcon"
+        android:layout_alignRight="@+id/imageButton3"
+        android:layout_alignEnd="@+id/imageButton3" />
 
 </RelativeLayout>

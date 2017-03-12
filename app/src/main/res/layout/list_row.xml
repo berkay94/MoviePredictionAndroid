@@ -48,7 +48,7 @@
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/filmsüre"
+        android:id="@+id/filmsure"
         android:layout_marginTop="11dp"
         android:layout_below="@+id/filmad"
         android:layout_alignLeft="@+id/filmad"
@@ -59,9 +59,9 @@
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/filmkonu"
-        android:layout_alignBaseline="@+id/filmsüre"
-        android:layout_alignBottom="@+id/filmsüre"
+        android:id="@+id/filmtur"
+        android:layout_alignBaseline="@+id/filmsure"
+        android:layout_alignBottom="@+id/filmsure"
         android:layout_alignLeft="@+id/filmtarih"
         android:layout_alignStart="@+id/filmtarih"
         android:textColor="@color/filmkonu" />
@@ -72,19 +72,9 @@
         app:srcCompat="@drawable/starr"
         android:layout_marginTop="13dp"
         android:id="@+id/filmoy"
-        android:layout_below="@+id/filmsüre"
-        android:layout_alignLeft="@+id/filmsüre"
-        android:layout_alignStart="@+id/filmsüre" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/basarı"
-        android:layout_alignTop="@+id/filmoy"
-        android:layout_toRightOf="@+id/filmoy"
-        android:layout_toEndOf="@+id/filmoy"
-        android:textColor="@color/basarı" />
+        android:layout_below="@+id/filmsure"
+        android:layout_alignLeft="@+id/filmsure"
+        android:layout_alignStart="@+id/filmsure" />
 
     <TextView
         android:text="TextView"
@@ -101,11 +91,21 @@
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:id="@+id/acıklama"
+        android:id="@+id/basari"
+        android:layout_alignTop="@+id/filmoy"
+        android:layout_toRightOf="@+id/filmoy"
+        android:layout_toEndOf="@+id/filmoy"
+        android:textColor="@color/basarı" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/basrol"
         android:layout_alignLeft="@+id/basrol"
         android:layout_alignStart="@+id/basrol"
+        android:layout_marginTop="21dp"
+        android:id="@+id/aciklama"
         android:textColor="@color/acıklama" />
 
 </RelativeLayout>
