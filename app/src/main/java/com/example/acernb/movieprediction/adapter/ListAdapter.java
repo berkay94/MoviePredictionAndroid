@@ -26,6 +26,7 @@ public class ListAdapter extends BaseAdapter {
     private List<Movies> moviesItems;
     ImageLoader imageLoader= AppController.getInstance().getImageLoader();
 
+
     public ListAdapter(Activity activity,List<Movies> moviesItems){
         this.activity=activity;
         this.moviesItems=moviesItems;
@@ -61,26 +62,39 @@ public class ListAdapter extends BaseAdapter {
         TextView filmBasrol=(TextView)convertView.findViewById(R.id.basrol);
         TextView filmAciklama=(TextView)convertView.findViewById(R.id.aciklama);
 
+
         Movies movies=moviesItems.get(position);
 
-        filmIcon.setImageUrl(movies.getFilmresim(),imageLoader);
 
-        filmAd.setText(movies.getFilmadi());
-        filmBasrol.setText(movies.getBasrol());
-        filmAciklama.setText(movies.getAciklama());
-        filmTarih.setText(String.valueOf(movies.getYil()));
-        filmSure.setText(String.valueOf(movies.getSure()));
-        filmBasari.setText(String.valueOf(movies.getReyting()));
+        String basrolStr = "";
+        for (String bstr:movies.getBasrol()){
+            basrolStr += bstr + ", ";
+        }
+        basrolStr = basrolStr.length()>0 ? basrolStr.substring(0,basrolStr.length()-2):basrolStr;
+        filmBasrol.setText(basrolStr);
+
 
         String genreStr = "";
-        for (String str:movies.getTur()){
-            genreStr += str + ", ";
+        for (String gstr:movies.getTur()){
+            genreStr += gstr + ", ";
         }
         genreStr = genreStr.length()>0 ? genreStr.substring(0,genreStr.length()-2):genreStr;
         filmTur.setText(genreStr);
 
+
+
+
+        filmIcon.setImageUrl(movies.getFilmresim(),imageLoader);
+
+        filmAd.setText(movies.getFilmadi());
+        filmAciklama.setText(movies.getAciklama());
+        filmTarih.setText("("+String.valueOf(movies.getYil())+")");
+        filmSure.setText(String.valueOf(movies.getSure())+ " " + "|" + " " + filmTur.getText() );
+        filmBasari.setText(String.valueOf(movies.getReyting()));
+
         return convertView;
 
     }
+
 
 }

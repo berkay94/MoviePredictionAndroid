@@ -9,8 +9,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/arkaplan"
-    tools:context="com.example.acernb.movieprediction.AnaSayfaActivity">
+    tools:context="com.example.acernb.movieprediction.AnaSayfaActivity"
+    android:background="@android:color/black">
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -33,17 +33,25 @@
         android:background="@android:color/transparent" />
 
 
-
     <ListView
         android:id="@+id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:dividerHeight="1dp"
+        android:divider="@color/list_divider"
+        android:listSelector="@drawable/list_row_selector"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/arkaplan"
         android:layout_below="@+id/filmara"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@android:color/transparent"
-        android:listSelector="@drawable/list_row_selector"
-        android:layout_marginTop="15dp" />
+        android:layout_alignParentStart="true" />
+
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/filmara"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
 
 </RelativeLayout>

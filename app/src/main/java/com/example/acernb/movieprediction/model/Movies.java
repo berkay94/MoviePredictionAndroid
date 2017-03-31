@@ -1,34 +1,49 @@
 package com.example.acernb.movieprediction.model;
 
+
+
 import java.util.ArrayList;
 /**
  * Created by AcerNB on 8.3.2017.
  */
 
-public class Movies {
-    private String filmadi,filmresim,basrol,aciklama;
+public class Movies  {
+    private String filmadi,filmresim,aciklama,yonetmen;
     private int yil,sure;
     private double reyting;
     private ArrayList<String> tur;
+    private ArrayList<String> basrol;
+    private ArrayList<String> oyuncular;
+    private ArrayList<String> roller;
 
     public Movies(){
     }
-    public Movies(String filmadi,String filmresim,String basrol,String aciklama,int yil,int sure,double reyting,ArrayList<String> tur ){
+    public Movies(String filmadi,String filmresim,String aciklama,String yonetmen,int yil,int sure,double reyting,ArrayList<String> tur,ArrayList<String> basrol,ArrayList<String> oyuncular,ArrayList<String> roller  ){
         this.filmadi=filmadi;
         this.filmresim=filmresim;
         this.basrol=basrol;
+        this.oyuncular=oyuncular;
+        this.roller=roller;
         this.aciklama=aciklama;
+        this.yonetmen=yonetmen;
         this.yil=yil;
         this.sure=sure;
         this.reyting=reyting;
         this.tur=tur;
     }
 
+
     public String getFilmadi(){
         return filmadi;
     }
     public void setFilmadi(String filmadi){
         this.filmadi=filmadi;
+    }
+    public String getYonetmen(){
+        return yonetmen;
+    }
+    public void setYonetmen(String yonetmen){
+        this.yonetmen=yonetmen;
     }
 
     public String getFilmresim(){
@@ -38,10 +53,10 @@ public class Movies {
         this.filmresim=filmresim;
     }
 
-    public String getBasrol(){
+    public ArrayList<String>getBasrol(){
         return basrol;
     }
-    public void setBasrol(String basrol){
+    public void setBasrol(ArrayList<String> basrol){
         this.basrol=basrol;
     }
 
@@ -79,4 +94,18 @@ public class Movies {
     public void setTur(ArrayList<String> tur){
         this.tur=tur;
     }
+    public ArrayList<String> getOyuncular(){
+        return oyuncular;
+    }
+    public void setOyuncular(ArrayList<String> oyuncular){
+        this.oyuncular=oyuncular;
+    }
+    public ArrayList<String> getRoller(){
+        return roller;
+    }
+    public void setRoller(ArrayList<String> roller){
+        this.roller=roller;
+    }
+
+
 }

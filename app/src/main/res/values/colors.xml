@@ -14,4 +14,5 @@
     <color name="list_row_end_color">#00000000</color>
     <color name="list_row_hover_start_color">#dddddd</color>
     <color name="list_row_hover_end_color">#dddddd</color>
+    <color name="list_divider">#ffff00</color>
 </resources>

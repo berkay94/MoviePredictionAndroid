@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/arkaplan">
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_row_selector">
 
 
     <com.android.volley.toolbox.NetworkImageView
@@ -24,54 +24,80 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/filmtarih"
-        android:layout_marginLeft="80dp"
-        android:layout_marginStart="80dp"
+        android:textColor="@color/filmtarih"
+
         android:layout_alignBaseline="@+id/filmad"
         android:layout_alignBottom="@+id/filmad"
-        android:layout_toRightOf="@+id/filmicon"
-        android:layout_toEndOf="@+id/filmicon"
-        android:textColor="@color/filmtarih" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/filmad"
+        android:textColor="@color/filmad"
+
         android:layout_alignTop="@+id/filmicon"
         android:layout_toRightOf="@+id/filmicon"
-        android:layout_toEndOf="@+id/filmicon"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        android:textColor="@color/filmad" />
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/aciklama"
+        android:textColor="@color/acıklama"
+        android:textSize="12sp"
+        android:layout_below="@+id/filmicon"
+        android:layout_alignLeft="@+id/basrol"
+        android:layout_alignStart="@+id/basrol"
+        android:layout_marginTop="13dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/basrol"
+        android:textColor="@color/basrol"
+        android:textSize="12sp"
+        android:layout_above="@+id/aciklama"
+        android:layout_alignLeft="@+id/filmsure"
+        android:layout_alignStart="@+id/filmsure" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/filmsure"
-        android:layout_marginTop="11dp"
+        android:textColor="@color/filmsüre"
+        android:textSize="12sp"
         android:layout_below="@+id/filmad"
         android:layout_alignLeft="@+id/filmad"
-        android:layout_alignStart="@+id/filmad"
-        android:textColor="@color/filmsüre" />
+        android:layout_alignStart="@+id/filmad" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/filmtur"
-        android:layout_alignBaseline="@+id/filmsure"
+        android:textColor="@color/filmkonu"
+        android:visibility="invisible"
         android:layout_alignBottom="@+id/filmsure"
-        android:layout_alignLeft="@+id/filmtarih"
-        android:layout_alignStart="@+id/filmtarih"
-        android:textColor="@color/filmkonu" />
+        android:layout_toRightOf="@+id/filmad"
+        android:layout_toEndOf="@+id/filmad"
+        android:layout_below="@+id/filmad" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/starr"
-        android:layout_marginTop="13dp"
-        android:id="@+id/filmoy"
+        android:id="@+id/imageView2"
+        android:background="@drawable/starr"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/filmsure"
         android:layout_alignLeft="@+id/filmsure"
         android:layout_alignStart="@+id/filmsure" />
@@ -80,32 +106,12 @@
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/basrol"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/filmicon"
-        android:layout_alignLeft="@+id/filmoy"
-        android:layout_alignStart="@+id/filmoy"
-        android:textColor="@color/basrol" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/basari"
-        android:layout_alignTop="@+id/filmoy"
-        android:layout_toRightOf="@+id/filmoy"
-        android:layout_toEndOf="@+id/filmoy"
-        android:textColor="@color/basarı" />
+        android:textColor="@color/basarı"
+        android:textSize="12sp"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_toEndOf="@+id/imageView2" />
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/basrol"
-        android:layout_alignLeft="@+id/basrol"
-        android:layout_alignStart="@+id/basrol"
-        android:layout_marginTop="21dp"
-        android:id="@+id/aciklama"
-        android:textColor="@color/acıklama" />
 
 </RelativeLayout>
