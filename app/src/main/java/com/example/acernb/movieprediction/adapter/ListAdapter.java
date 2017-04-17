@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -14,22 +16,29 @@ import com.example.acernb.movieprediction.R;
 import com.example.acernb.movieprediction.app.AppController;
 import com.example.acernb.movieprediction.model.Movies;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by AcerNB on 10.3.2017.
  */
 
-public class ListAdapter extends BaseAdapter {
+public class ListAdapter extends BaseAdapter implements Filterable {
     private Activity activity;
     private LayoutInflater inflater;
-    private List<Movies> moviesItems;
+    private ArrayList<Movies> moviesItems;
+    private ArrayList<Movies> mStringFilterList;
+    private ValueFilter valueFilter;
     ImageLoader imageLoader= AppController.getInstance().getImageLoader();
 
 
-    public ListAdapter(Activity activity,List<Movies> moviesItems){
+    public ListAdapter(Activity activity,ArrayList<Movies> moviesItems){
+        super();
         this.activity=activity;
         this.moviesItems=moviesItems;
+        mStringFilterList=moviesItems;
+        getFilter();
+
     }
     @Override
     public int getCount(){
@@ -97,4 +106,49 @@ public class ListAdapter extends BaseAdapter {
     }
 
 
+    @Override
+    public Filter getFilter() {
+        if (valueFilter==null){
+            valueFilter=new ValueFilter();
+        }
+        return valueFilter;
+    }
+    private class ValueFilter extends Filter{
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint){
+            FilterResults results=new FilterResults();
+            if (constraint!=null && constraint.length()>0){
+                ArrayList<Movies> filterList=new ArrayList<Movies>();
+                for (int i=0;i<mStringFilterList.size();i++){
+                    if ((mStringFilterList.get(i).getFilmadi().toUpperCase()).contains(constraint.toString().toUpperCase())){
+                        Movies movies=new Movies();
+                        movies.setFilmadi(mStringFilterList.get(i).getFilmadi());
+                        movies.setRoller(mStringFilterList.get(i).getRoller());
+                        movies.setAciklama(mStringFilterList.get(i).getAciklama());
+                        movies.setOyuncular(mStringFilterList.get(i).getOyuncular());
+                        movies.setYil(mStringFilterList.get(i).getYil());
+                        movies.setBasrol(mStringFilterList.get(i).getBasrol());
+                        movies.setFilmresim(mStringFilterList.get(i).getFilmresim());
+                        movies.setReyting(mStringFilterList.get(i).getReyting());
+                        movies.setSure(mStringFilterList.get(i).getSure());
+                        movies.setTur(mStringFilterList.get(i).getTur());
+                        movies.setYonetmen(mStringFilterList.get(i).getYonetmen());
+                        filterList.add(movies);
+                    }
+                }
+                results.count=filterList.size();
+                results.values=filterList;
+            }else{
+                results.count=mStringFilterList.size();
+                results.values=mStringFilterList;
+            }
+            return results;
+        }
+        @Override
+        protected void publishResults(CharSequence constraint,FilterResults results){
+            moviesItems=(ArrayList<Movies>) results.values;
+            notifyDataSetChanged();
+        }
+
+    }
 }

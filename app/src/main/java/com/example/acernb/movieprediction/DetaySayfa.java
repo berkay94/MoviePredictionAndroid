@@ -17,6 +17,7 @@ import android.widget.VideoView;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.example.acernb.movieprediction.app.AppController;
+import com.example.acernb.movieprediction.model.Movies;
 
 import java.util.ArrayList;
 
@@ -40,7 +41,7 @@ public class DetaySayfa extends AppCompatActivity {
         videoView=(VideoView)findViewById(R.id.videoView2);
         MediaController mediaController=new MediaController(this);
         mediaController.setAnchorView(videoView);
-        Uri video=Uri.parse("http://www.html5videoplayer.net/videos/toystory.mp4");
+        Uri video=Uri.parse("http://techslides.com/demos/sample-videos/small.mp4");
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(video);
 
@@ -67,6 +68,7 @@ public class DetaySayfa extends AppCompatActivity {
         TextView text9=(TextView)findViewById(R.id.droller);
         TextView text10=(TextView)findViewById(R.id.textView9);
         TextView text11=(TextView)findViewById(R.id.filmaciklama);
+
 
 
         text.setText(getIntent().getExtras().getString("title"));

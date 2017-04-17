@@ -16,9 +16,10 @@ public class Movies  {
     private ArrayList<String> oyuncular;
     private ArrayList<String> roller;
 
+
     public Movies(){
     }
-    public Movies(String filmadi,String filmresim,String aciklama,String yonetmen,int yil,int sure,double reyting,ArrayList<String> tur,ArrayList<String> basrol,ArrayList<String> oyuncular,ArrayList<String> roller  ){
+    public Movies(String filmadi,String filmresim,String aciklama,String yonetmen,int yil,int sure,double reyting,ArrayList<String> tur,ArrayList<String> basrol,ArrayList<String> oyuncular,ArrayList<String> roller ){
         this.filmadi=filmadi;
         this.filmresim=filmresim;
         this.basrol=basrol;
@@ -30,6 +31,7 @@ public class Movies  {
         this.sure=sure;
         this.reyting=reyting;
         this.tur=tur;
+
     }
 
 

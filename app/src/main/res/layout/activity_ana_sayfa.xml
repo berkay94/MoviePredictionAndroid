@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.acernb.movieprediction.AnaSayfaActivity"
-    android:background="@android:color/black">
+    android:background="@drawable/arkaplan">
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -41,17 +41,25 @@
         android:divider="@color/list_divider"
         android:listSelector="@drawable/list_row_selector"
         android:layout_marginTop="56dp"
-        android:background="@drawable/arkaplan"
+        android:background="@android:color/transparent"
         android:layout_below="@+id/filmara"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
 
-    <SearchView
-        android:id="@+id/search"
+
+        />
+
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText"
         android:layout_below="@+id/filmara"
         android:layout_centerHorizontal="true"
-        android:visibility="invisible" />
+        android:layout_marginTop="11dp"
+        android:visibility="invisible"
+        android:textColorLink="@color/list_divider"
+        android:textColorHint="@color/list_divider" />
 
 </RelativeLayout>
