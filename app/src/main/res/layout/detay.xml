@@ -46,7 +46,8 @@
         android:layout_alignBottom="@+id/filmturu"
         android:layout_toRightOf="@+id/filmturu"
         android:layout_toEndOf="@+id/filmturu"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+       />
 
     <com.android.volley.toolbox.NetworkImageView
 
@@ -58,6 +59,15 @@
         android:layout_alignStart="@+id/filmsuresi"
         android:layout_marginTop="13dp" />
 
+        <com.example.acernb.movieprediction.CircularNetworkImageView
+
+            android:id="@+id/oyuncuresimleri"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignRight="@+id/doyuncular"
+            android:layout_marginTop="480dp"
+            />
+
 
     <TextView
         android:text="TextView"
@@ -68,7 +78,8 @@
         android:layout_alignBaseline="@+id/filmsuresi"
         android:layout_alignBottom="@+id/filmsuresi"
         android:layout_toRightOf="@+id/filmsuresi"
-        android:layout_toEndOf="@+id/filmsuresi" />
+        android:layout_toEndOf="@+id/filmsuresi"
+        />
 
     <TextView
         android:text="TextView"
@@ -142,8 +153,11 @@
         android:id="@+id/filmyili"
         android:textColor="@color/filmtarih"
         android:layout_above="@+id/imageView"
-        android:layout_alignRight="@+id/imageButton"
-        android:layout_alignEnd="@+id/imageButton" />
+        android:layout_toRightOf="@+id/filmadi"
+        android:layout_toEndOf="@+id/filmadi"
+        android:layout_marginLeft="2dp"
+
+        />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -152,11 +166,12 @@
         android:id="@+id/play"
         android:background="@android:color/transparent"
         android:layout_marginRight="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="85dp"
         android:layout_marginTop="33dp"
         android:layout_alignTop="@+id/videoView2"
-        android:layout_toLeftOf="@+id/filmyili"
-        android:layout_toStartOf="@+id/filmyili" />
+        android:layout_toLeftOf="@+id/imageButton"
+        android:layout_toStartOf="@+id/imageButton"
+        />
 
     <TextView
         android:text="TextView"
@@ -166,10 +181,13 @@
         android:textColor="@color/basarı"
         android:textSize="12sp"
         android:layout_alignBottom="@+id/imageView"
-        android:layout_toLeftOf="@+id/filmyili"
-        android:layout_toStartOf="@+id/filmyili"
-        android:layout_marginRight="13dp"
-        android:layout_marginEnd="13dp" />
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_marginLeft="18dp"
+
+        />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -177,8 +195,10 @@
         app:srcCompat="@drawable/star"
         android:id="@+id/imageView"
         android:layout_below="@+id/filmadi"
-        android:layout_toLeftOf="@+id/basarisi"
-        android:layout_toStartOf="@+id/basarisi" />
+        android:layout_toLeftOf="@+id/imageButton"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="50dp"
+        />
 
     <TextView
         android:text="Videolar"
@@ -196,10 +216,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView"
-        android:layout_toLeftOf="@+id/filmyili"
-        android:layout_toStartOf="@+id/filmyili"
+        android:layout_toLeftOf="@+id/imageButton"
         android:id="@+id/textView4"
-        android:textColor="@color/filmad" />
+        android:textColor="@color/filmad"
+        android:layout_marginRight="10dp"
+        />
 
     <TextView
         android:text="Oyuncular"
@@ -242,7 +263,9 @@
         android:textColor="@color/filmad"
         android:layout_above="@+id/textView7"
         android:layout_alignRight="@+id/droller"
-        android:layout_alignEnd="@+id/droller" />
+        android:layout_alignEnd="@+id/droller"
+        android:layout_marginRight="23dp"
+        />
 
     <TextView
         android:text="TextView"
@@ -266,5 +289,55 @@
         android:layout_alignStart="@+id/dyonetmen"
         android:id="@+id/textView9"
         android:textColor="@color/filmkonu" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="105dp"
+            android:layout_marginStart="105dp"
+            android:id="@+id/textView5"
+            android:visibility="gone" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/textView"
+            android:layout_alignLeft="@+id/textView"
+            android:layout_alignStart="@+id/textView"
+            android:layout_marginTop="1dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+
+                </LinearLayout>
+        </HorizontalScrollView>
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView2"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_alignTop="@+id/horizontalScrollView"
+            android:layout_toRightOf="@+id/horizontalScrollView"
+            android:layout_toEndOf="@+id/horizontalScrollView"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="19dp"
+           >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+
+                </LinearLayout>
+
+        </HorizontalScrollView>
     </RelativeLayout>
 </ScrollView>

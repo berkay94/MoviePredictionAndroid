@@ -23,27 +23,14 @@
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/filmtarih"
-        android:textColor="@color/filmtarih"
-
-        android:layout_alignBaseline="@+id/filmad"
-        android:layout_alignBottom="@+id/filmad"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="12dp"
-        android:layout_marginEnd="12dp" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/filmad"
         android:textColor="@color/filmad"
-
         android:layout_alignTop="@+id/filmicon"
         android:layout_toRightOf="@+id/filmicon"
         android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp" />
+        android:layout_marginStart="11dp"
+        android:textSize="13sp"/>
+
 
     <TextView
         android:text="TextView"
@@ -79,18 +66,6 @@
         android:layout_alignLeft="@+id/filmad"
         android:layout_alignStart="@+id/filmad" />
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/filmtur"
-        android:textColor="@color/filmkonu"
-        android:visibility="invisible"
-        android:layout_alignBottom="@+id/filmsure"
-        android:layout_toRightOf="@+id/filmad"
-        android:layout_toEndOf="@+id/filmad"
-        android:layout_below="@+id/filmad" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -108,9 +83,36 @@
         android:id="@+id/basari"
         android:textColor="@color/basarı"
         android:textSize="12sp"
-        android:layout_alignTop="@+id/imageView2"
+        android:layout_marginTop="57dp"
         android:layout_toRightOf="@+id/imageView2"
-        android:layout_toEndOf="@+id/imageView2" />
+        android:layout_toEndOf="@+id/imageView2"
+        android:layout_marginLeft="1dp"
+        />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/filmtur"
+        android:textColor="@color/filmkonu"
+        android:visibility="invisible"
+        android:layout_below="@+id/filmad"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/filmtarih"
+        android:textColor="@color/filmtarih"
+        android:layout_alignBaseline="@+id/filmad"
+        android:layout_alignBottom="@+id/filmad"
+        android:layout_toRightOf="@+id/filmad"
+        android:layout_toEndOf="@+id/filmad"
+        android:layout_marginLeft="2dp"
+        android:textSize="13sp"
+
+        />
 
 
 </RelativeLayout>

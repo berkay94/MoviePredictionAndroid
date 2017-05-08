@@ -74,7 +74,7 @@ public class AnaSayfaActivity extends AppCompatActivity{
 
         editText=(EditText)findViewById(R.id.editText);
         rl=(RelativeLayout)findViewById(R.id.activity_ana_sayfa);
-        rl.getBackground().setAlpha(50);
+        rl.getBackground().setAlpha(30);
 
         ımageButton=(ImageButton)findViewById(R.id.filmara);
 
@@ -145,6 +145,7 @@ public class AnaSayfaActivity extends AppCompatActivity{
                 String ıtem5= String.valueOf(movies.getSure());
                 String ıtem6=movies.getYonetmen();
                 String ıtem7=movies.getAciklama();
+                String ıtem8=movies.getVideourl();
 
 
                 String genreStr = "";
@@ -155,15 +156,17 @@ public class AnaSayfaActivity extends AppCompatActivity{
 
                 String oyuncularStr = "";
                 for (String ostr:movies.getOyuncular()){
-                    oyuncularStr += ostr+ "\n\n ";
+                    oyuncularStr += ostr+ "\n\n\n ";
                 }
                 oyuncularStr =  oyuncularStr.length()>0 ?  oyuncularStr.substring(0, oyuncularStr.length()-2): oyuncularStr;
 
                 String rollerStr = "";
                 for (String rstr:movies.getRoller()){
-                    rollerStr += rstr + "\n\n ";
+                    rollerStr += rstr + "\n\n\n ";
                 }
                 rollerStr = rollerStr.length()>0 ? rollerStr.substring(0,rollerStr.length()-2):rollerStr;
+
+
 
 
                 i.putExtra("title",ıtem);
@@ -177,6 +180,9 @@ public class AnaSayfaActivity extends AppCompatActivity{
                 i.putExtra("roller",rollerStr);
                 i.putExtra("oyuncular2",genreStr);
                 i.putExtra("aciklama",ıtem7);
+                i.putExtra("fragman",ıtem8);
+
+
                 startActivity(i);
 
             }
@@ -200,6 +206,7 @@ public class AnaSayfaActivity extends AppCompatActivity{
                         movie.setReyting(((Number)jsonObject.get("rating")).doubleValue());
                         movie.setYil(jsonObject.getInt("releaseYear"));
                         // movie.setSure(jsonObject.getInt(""));
+                        //movie.setVideourl(jsonObject.getString(""));
 
                         JSONArray turArry=jsonObject.getJSONArray("genre");
                         ArrayList<String> tur= new ArrayList<String>();

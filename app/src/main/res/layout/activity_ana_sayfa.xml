@@ -60,6 +60,7 @@
         android:layout_marginTop="11dp"
         android:visibility="invisible"
         android:textColorLink="@color/list_divider"
-        android:textColorHint="@color/list_divider" />
+        android:textColorHint="@color/list_divider"
+        android:backgroundTint="@color/list_divider" />
 
 </RelativeLayout>

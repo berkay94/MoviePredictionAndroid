@@ -94,7 +94,6 @@ public class ListAdapter extends BaseAdapter implements Filterable {
 
 
         filmIcon.setImageUrl(movies.getFilmresim(),imageLoader);
-
         filmAd.setText(movies.getFilmadi());
         filmAciklama.setText(movies.getAciklama());
         filmTarih.setText("("+String.valueOf(movies.getYil())+")");

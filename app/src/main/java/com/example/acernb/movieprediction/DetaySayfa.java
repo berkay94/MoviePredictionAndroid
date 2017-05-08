@@ -41,9 +41,7 @@ public class DetaySayfa extends AppCompatActivity {
         videoView=(VideoView)findViewById(R.id.videoView2);
         MediaController mediaController=new MediaController(this);
         mediaController.setAnchorView(videoView);
-        Uri video=Uri.parse("http://techslides.com/demos/sample-videos/small.mp4");
-        videoView.setMediaController(mediaController);
-        videoView.setVideoURI(video);
+
 
 
 
@@ -68,6 +66,8 @@ public class DetaySayfa extends AppCompatActivity {
         TextView text9=(TextView)findViewById(R.id.droller);
         TextView text10=(TextView)findViewById(R.id.textView9);
         TextView text11=(TextView)findViewById(R.id.filmaciklama);
+        CircularNetworkImageView text12=(CircularNetworkImageView)findViewById(R.id.oyuncuresimleri) ;
+        TextView videourl=(TextView)findViewById(R.id.textView5);
 
 
 
@@ -83,6 +83,13 @@ public class DetaySayfa extends AppCompatActivity {
         text10.setText(getIntent().getExtras().getString("oyuncular2"));
         text11.setText(getIntent().getExtras().getString("aciklama"));
 
+        text12.setImageUrl(getIntent().getExtras().getString("image"),imageLoader);
+        videourl.setText("http://yt-dash-mse-test.commondatastorage.googleapis.com/media/car-20120827-85.mp4");
+
+
+        Uri video=Uri.parse((String) videourl.getText());
+        videoView.setMediaController(mediaController);
+        videoView.setVideoURI(video);
 
 
     }

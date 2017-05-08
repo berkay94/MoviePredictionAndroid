@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 
 public class Movies  {
-    private String filmadi,filmresim,aciklama,yonetmen;
+    private String filmadi,filmresim,aciklama,yonetmen,videourl;
     private int yil,sure;
     private double reyting;
     private ArrayList<String> tur;
@@ -17,9 +17,10 @@ public class Movies  {
     private ArrayList<String> roller;
 
 
+
     public Movies(){
     }
-    public Movies(String filmadi,String filmresim,String aciklama,String yonetmen,int yil,int sure,double reyting,ArrayList<String> tur,ArrayList<String> basrol,ArrayList<String> oyuncular,ArrayList<String> roller ){
+    public Movies(String filmadi,String filmresim,String aciklama,String yonetmen,String videourl,int yil,int sure,double reyting,ArrayList<String> tur,ArrayList<String> basrol,ArrayList<String> oyuncular,ArrayList<String> roller){
         this.filmadi=filmadi;
         this.filmresim=filmresim;
         this.basrol=basrol;
@@ -31,7 +32,19 @@ public class Movies  {
         this.sure=sure;
         this.reyting=reyting;
         this.tur=tur;
+        this.videourl=videourl;
 
+
+    }
+
+
+
+
+    public String getVideourl(){
+        return videourl;
+    }
+    public void setVideourl(String videourl){
+        this.videourl=videourl;
     }
 
 
