@@ -14,7 +14,7 @@ import com.example.acernb.movieprediction.util.LruBitmapCache;
  */
 
 public class AppController extends Application {
-    public static final String TAG = AppController.class.getSimpleName();
+     public static final String TAG = AppController.class.getSimpleName();
     private RequestQueue requestQueue;
     private ImageLoader imageLoader;
     private static AppController instance;
