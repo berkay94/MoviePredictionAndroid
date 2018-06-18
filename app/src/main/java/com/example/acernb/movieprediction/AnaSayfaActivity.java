@@ -55,8 +55,8 @@ import java.util.Locale;
 
 public class AnaSayfaActivity extends AppCompatActivity{
 
-    private static final String TAG = AnaSayfaActivity.class.getSimpleName();
-    private static final String url = "http://api.androidhive.info/json/movies.json";
+   private static final String TAG = AnaSayfaActivity.class.getSimpleName();
+    private static final String url = "http://159.203.131.130:3000/";
     private ProgressDialog progressDialog;
     private ArrayList<Movies> moviesList=new ArrayList<Movies>();
     private ListView listView;
@@ -74,7 +74,7 @@ public class AnaSayfaActivity extends AppCompatActivity{
 
         editText=(EditText)findViewById(R.id.editText);
         rl=(RelativeLayout)findViewById(R.id.activity_ana_sayfa);
-        rl.getBackground().setAlpha(30);
+        rl.getBackground().setAlpha(20);
 
         ımageButton=(ImageButton)findViewById(R.id.filmara);
 
@@ -141,30 +141,147 @@ public class AnaSayfaActivity extends AppCompatActivity{
                 String ıtem=movies.getFilmadi();
                 String ıtem2= String.valueOf(movies.getYil());
                 String ıtem3=movies.getFilmresim();
-                String ıtem4=String.valueOf(movies.getReyting());
                 String ıtem5= String.valueOf(movies.getSure());
-                String ıtem6=movies.getYonetmen();
                 String ıtem7=movies.getAciklama();
-                String ıtem8=movies.getVideourl();
+                String ıtem9=movies.getTur();
+                String ıtem11= String.format("%.1f",movies.getPredicate());
+
+                if(position==0){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.wonderwoman;
+                    i.putExtra("video",url);
 
 
-                String genreStr = "";
-                for (String str:movies.getTur()){
-                    genreStr += str + ", ";
                 }
-                genreStr = genreStr.length()>0 ? genreStr.substring(0,genreStr.length()-2):genreStr;
+                else if(position==1){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.amityvilletheawakening;
+                    i.putExtra("video",url);
+
+
+                }
+                else if(position==3){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.despicableme3;
+                    i.putExtra("video",url);
+                    movies.setVideourl(url);
+
+                }
+                else if(position==4){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.fourtysevenmeters;
+                    i.putExtra("video",url);
+
+
+                }
+                else if(position==5){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.thebadbatch;
+                    i.putExtra("video",url);
+
+                }
+                else if(position==6){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.thebeguiled;
+                    i.putExtra("video",url);
+
+
+                }
+                else if(position==7){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.thebigsick;
+                    i.putExtra("video",url);
+
+
+                }
+                else if(position==8){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.maudie;
+                    i.putExtra("video",url);
+
+
+                }
+                else if(position==11){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.alleyezonme;
+                    i.putExtra("video",url);
+
+
+                }
+                else if(position==12){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.cars3;
+                    i.putExtra("video",url);
+
+
+                }
+                else if(position==13){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.mycousinrachel;
+                    i.putExtra("video",url);
+
+
+                }
+                else if(position==14){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.beatrizatdinner;
+                    i.putExtra("video",url);
+
+
+                }
+                else if(position==15){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.thehero;
+                    i.putExtra("video",url);
+
+
+                }
+                else if(position==16){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.itcomesatnight;
+                    i.putExtra("video",url);
+
+                }
+                else if(position==17){
+                    String url="android.resource://" + getPackageName() + "/raw/"+R.raw.meganleavey;
+                    i.putExtra("video",url);
+                }
+
+
+                String basrolStr = "";
+                for (String bstr:movies.getBasrol()){
+                    basrolStr += bstr + ", ";
+                }
+                basrolStr = basrolStr.length()>0 ? basrolStr.substring(0,basrolStr.length()-2):basrolStr;
 
                 String oyuncularStr = "";
-                for (String ostr:movies.getOyuncular()){
-                    oyuncularStr += ostr+ "\n\n\n ";
+                for (String ostr:movies.getBasrol()){
+                    oyuncularStr += ostr+ "\n\n\n\n\n ";
                 }
                 oyuncularStr =  oyuncularStr.length()>0 ?  oyuncularStr.substring(0, oyuncularStr.length()-2): oyuncularStr;
 
                 String rollerStr = "";
                 for (String rstr:movies.getRoller()){
-                    rollerStr += rstr + "\n\n\n ";
+                    rollerStr += rstr + "\n\n\n\n\n ";
                 }
                 rollerStr = rollerStr.length()>0 ? rollerStr.substring(0,rollerStr.length()-2):rollerStr;
+
+                String yntmnStr = "";
+                for (String ystr:movies.getYonetmen()){
+                    yntmnStr += ystr + ", ";
+                }
+                yntmnStr = yntmnStr.length()>0 ? yntmnStr.substring(0,yntmnStr.length()-2):yntmnStr;
+
+
+                String oyncuresmStr = "";
+                for (String oyncurstr:movies.getOyuncuresim()){
+                    oyncuresmStr += oyncurstr + ", ";
+                }
+                oyncuresmStr = oyncuresmStr.length()>0 ? oyncuresmStr.substring(0,oyncuresmStr.length()-2):oyncuresmStr;
+
+                String oyncuresmStr2 = "";
+                for (String oyncurstr:movies.getOyuncuresim2()){
+                    oyncuresmStr2 += oyncurstr + ", ";
+                }
+                oyncuresmStr2 = oyncuresmStr2.length()>0 ? oyncuresmStr2.substring(0,oyncuresmStr2.length()-2):oyncuresmStr2;
+
+                String oyncuresmStr3 = "";
+                for (String oyncurstr:movies.getOyuncuresim3()){
+                    oyncuresmStr3 += oyncurstr + ", ";
+                }
+                oyncuresmStr3 = oyncuresmStr3.length()>0 ? oyncuresmStr3.substring(0,oyncuresmStr3.length()-2):oyncuresmStr3;
+
+                String oyncuresmStr4 = "";
+                for (String oyncurstr:movies.getOyuncuresim4()){
+                    oyncuresmStr4 += oyncurstr + ", ";
+                }
+                oyncuresmStr4 = oyncuresmStr4.length()>0 ? oyncuresmStr4.substring(0,oyncuresmStr4.length()-2):oyncuresmStr4;
 
 
 
@@ -172,15 +289,19 @@ public class AnaSayfaActivity extends AppCompatActivity{
                 i.putExtra("title",ıtem);
                 i.putExtra("year",ıtem2);
                 i.putExtra("image",ıtem3);
-                i.putExtra("rating",ıtem4);
+                i.putExtra("rating",ıtem11);
                 i.putExtra("time",ıtem5);
-                i.putExtra("tur",genreStr);
-                i.putExtra("yonetmen",ıtem6);
+                i.putExtra("yonetmen",yntmnStr);
                 i.putExtra("oyuncular",oyuncularStr);
                 i.putExtra("roller",rollerStr);
-                i.putExtra("oyuncular2",genreStr);
                 i.putExtra("aciklama",ıtem7);
-                i.putExtra("fragman",ıtem8);
+                i.putExtra("basrol",basrolStr);
+                i.putExtra("tur",ıtem9);
+                i.putExtra("oyuncuresim",oyncuresmStr);
+                i.putExtra("oyuncuresim2",oyncuresmStr2);
+                i.putExtra("oyuncuresim3",oyncuresmStr3);
+                i.putExtra("oyuncuresim4",oyncuresmStr4);
+
 
 
                 startActivity(i);
@@ -195,46 +316,100 @@ public class AnaSayfaActivity extends AppCompatActivity{
                 Log.d(TAG,response.toString());
                 hidePDialog();
 
+
                 for (int i=0;i<response.length();i++){
                     try{
                         JSONObject jsonObject=response.getJSONObject(i);
+                        JSONObject other = jsonObject.getJSONObject("other");
                         Movies movie=new Movies();
-                        movie.setFilmadi(jsonObject.getString("title"));
+                        movie.setFilmadi(other.getString("title"));
                         movie.setFilmresim(jsonObject.getString("image"));
-                        movie.setYonetmen(jsonObject.getString("title"));
-                        movie.setAciklama(jsonObject.getString("title"));
-                        movie.setReyting(((Number)jsonObject.get("rating")).doubleValue());
-                        movie.setYil(jsonObject.getInt("releaseYear"));
-                        // movie.setSure(jsonObject.getInt(""));
-                        //movie.setVideourl(jsonObject.getString(""));
+                        movie.setAciklama(other.getString("description"));
+                        movie.setTur(other.getString("genreString"));
+                        movie.setYil(other.getString("releaseyear"));
+                        movie.setVideourl(other.getString("imdbURL"));
+                        movie.setPredicate(jsonObject.getDouble("rating"));
 
-                        JSONArray turArry=jsonObject.getJSONArray("genre");
-                        ArrayList<String> tur= new ArrayList<String>();
-                        for (int j=0;j<turArry.length();j++){
-                            tur.add((String)turArry.get(j));
-                        }
-                        movie.setTur(tur);
+                        String runtime = other.getString("runtime");
+                        if(runtime == "N/A")
+                            movie.setSure(0);
+                        else
+                            movie.setSure(other.getInt("runtime"));
 
-                        JSONArray basrolArry=jsonObject.getJSONArray("genre");
+
+                       JSONArray basrolArry=other.getJSONArray("castArray");
                         ArrayList<String> basrol= new ArrayList<String>();
-                        for (int j=0;j<basrolArry.length();j++){
-                            basrol.add((String)basrolArry.get(j));
-                        }
+                       for (int j=0;j<basrolArry.length();j++){
+                       JSONObject object=basrolArry.getJSONObject(j);
+                           String name=object.getString("name");
+                           basrol.add(name);
+                     }
                         movie.setBasrol(basrol);
 
-                        JSONArray oyuncularArry=jsonObject.getJSONArray("genre");
-                        ArrayList<String> oyuncular= new ArrayList<String>();
-                        for (int j=0;j<oyuncularArry.length();j++){
-                            oyuncular.add((String)oyuncularArry.get(j));
-                        }
-                        movie.setOyuncular(oyuncular);
 
-                        JSONArray rollerArry=jsonObject.getJSONArray("genre");
-                        ArrayList<String> roller= new ArrayList<String>();
+                        JSONArray rollerArry=other.getJSONArray("castArray");
+                       ArrayList<String> roller= new ArrayList<String>();
                         for (int j=0;j<rollerArry.length();j++){
-                            roller.add((String)rollerArry.get(j));
+                            JSONObject object2=rollerArry.getJSONObject(j);
+                            String character= object2.getString("character");
+                            roller.add(character);
                         }
                         movie.setRoller(roller);
+
+                        JSONArray yonetmenArry=other.getJSONArray("directorArray");
+                        ArrayList<String> yonetmen= new ArrayList<String>();
+                        for (int j=0;j<yonetmenArry.length();j++){
+                            JSONObject object3=yonetmenArry.getJSONObject(j);
+                            String name2= object3.getString("name");
+                            yonetmen.add(name2);
+                        }
+                        movie.setYonetmen(yonetmen);
+
+
+                        JSONArray oyuncuresimArry=other.getJSONArray("castArray");
+                        ArrayList<String> oyncuresim= new ArrayList<String>();
+                        for (int j=0;j<oyuncuresimArry.length();j++){
+                            JSONObject object4=oyuncuresimArry.getJSONObject(j);
+                            String image= object4.getString("image");
+                            oyncuresim.add(image);
+
+                        }
+                        movie.setOyuncuresim(oyncuresim);
+
+                        JSONArray oyuncuresimArry2=other.getJSONArray("castArray");
+                        ArrayList<String> oyncuresim2= new ArrayList<String>();
+                        for (int j=1;j<oyuncuresimArry2.length();j++){
+                            JSONObject object5=oyuncuresimArry2.getJSONObject(j);
+                            String image2= object5.getString("image");
+                            oyncuresim2.add(image2);
+
+
+                        }
+                        movie.setOyuncuresim2(oyncuresim2);
+
+                        JSONArray oyuncuresimArry3=other.getJSONArray("castArray");
+                        ArrayList<String> oyncuresim3= new ArrayList<String>();
+                        for (int j=2;j<oyuncuresimArry3.length();j++){
+                            JSONObject object6=oyuncuresimArry3.getJSONObject(j);
+                            String image3= object6.getString("image");
+                            oyncuresim3.add(image3);
+
+
+                        }
+                        movie.setOyuncuresim3(oyncuresim3);
+
+
+
+                        JSONArray oyuncuresimArry4=other.getJSONArray("castArray");
+                        ArrayList<String> oyncuresim4= new ArrayList<String>();
+                        for (int j=3;j<oyuncuresimArry4.length();j++){
+                            JSONObject object7=oyuncuresimArry4.getJSONObject(j);
+                            String image4= object7.getString("image");
+                            oyncuresim4.add(image4);
+
+                        }
+                        movie.setOyuncuresim4(oyncuresim4);
+
 
                         moviesList.add(movie);
                     }
@@ -258,5 +433,6 @@ public class AnaSayfaActivity extends AppCompatActivity{
     }
 
 }
+
 
 
