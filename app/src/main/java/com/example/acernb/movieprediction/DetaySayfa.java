@@ -27,34 +27,34 @@ import java.util.ArrayList;
  */
 
 public class DetaySayfa extends AppCompatActivity {
-    ImageLoader imageLoader= AppController.getInstance().getImageLoader();
+   ImageLoader imageLoader= AppController.getInstance().getImageLoader();
 
     VideoView videoView;
-    ImageButton baslat;
+    ImageButton play;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detay);
 
-        baslat=(ImageButton)findViewById(R.id.play);
-        videoView=(VideoView)findViewById(R.id.videoView2);
+        play=(ImageButton)findViewById(R.id.imageButton3);
+        videoView=(VideoView)findViewById(R.id.videoView4);
         MediaController mediaController=new MediaController(this);
         mediaController.setAnchorView(videoView);
 
 
-
-
-        baslat.setOnClickListener(new View.OnClickListener() {
+        play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 videoView.start();
-               baslat.setVisibility(View.INVISIBLE);
+                play.setVisibility(View.INVISIBLE);
 
             }
         });
 
-
+        TextView videourl=(TextView)findViewById(R.id.textView5);
         TextView text=(TextView)findViewById(R.id.filmadi);
         TextView text2=(TextView)findViewById(R.id.filmyili);
         NetworkImageView text3=(NetworkImageView)findViewById(R.id.filmiconu) ;
@@ -67,29 +67,43 @@ public class DetaySayfa extends AppCompatActivity {
         TextView text10=(TextView)findViewById(R.id.textView9);
         TextView text11=(TextView)findViewById(R.id.filmaciklama);
         CircularNetworkImageView text12=(CircularNetworkImageView)findViewById(R.id.oyuncuresimleri) ;
-        TextView videourl=(TextView)findViewById(R.id.textView5);
-
-
+        CircularNetworkImageView text13=(CircularNetworkImageView)findViewById(R.id.oyuncuresimleri2) ;
+        CircularNetworkImageView text14=(CircularNetworkImageView)findViewById(R.id.oyuncuresimleri3) ;
+        CircularNetworkImageView text15=(CircularNetworkImageView)findViewById(R.id.oyuncuresimleri4) ;
+        NetworkImageView text16=(NetworkImageView)findViewById(R.id.foto) ;
+        NetworkImageView text17=(NetworkImageView)findViewById(R.id.foto2) ;
+        NetworkImageView text18=(NetworkImageView)findViewById(R.id.foto3) ;
+        NetworkImageView text19=(NetworkImageView)findViewById(R.id.foto4) ;
 
         text.setText(getIntent().getExtras().getString("title"));
         text2.setText("("+getIntent().getExtras().getString("year")+")");
         text3.setImageUrl(getIntent().getExtras().getString("image"),imageLoader);
         text4.setText(getIntent().getExtras().getString("rating"));
         text6.setText(getIntent().getExtras().getString("tur"));
-        text5.setText(getIntent().getExtras().getString("time")+" "+"|"+" "+text6.getText());
+        text5.setText(getIntent().getExtras().getString("time")+" "+"Minutes"+" "+"|"+" "+text6.getText());
         text7.setText(getIntent().getExtras().getString("yonetmen"));
         text8.setText(getIntent().getExtras().getString("oyuncular"));
         text9.setText(getIntent().getExtras().getString("roller"));
-        text10.setText(getIntent().getExtras().getString("oyuncular2"));
+        text10.setText(getIntent().getExtras().getString("basrol"));
         text11.setText(getIntent().getExtras().getString("aciklama"));
 
-        text12.setImageUrl(getIntent().getExtras().getString("image"),imageLoader);
-        videourl.setText("http://yt-dash-mse-test.commondatastorage.googleapis.com/media/car-20120827-85.mp4");
 
 
-        Uri video=Uri.parse((String) videourl.getText());
+        text12.setImageUrl(getIntent().getExtras().getString("oyuncuresim"),imageLoader);
+        text13.setImageUrl(getIntent().getExtras().getString("oyuncuresim2"),imageLoader);
+        text14.setImageUrl(getIntent().getExtras().getString("oyuncuresim3"),imageLoader);
+        text15.setImageUrl(getIntent().getExtras().getString("oyuncuresim4"),imageLoader);
+        text16.setImageUrl(getIntent().getExtras().getString("oyuncuresim"),imageLoader);
+        text17.setImageUrl(getIntent().getExtras().getString("oyuncuresim2"),imageLoader);
+        text18.setImageUrl(getIntent().getExtras().getString("oyuncuresim3"),imageLoader);
+        text19.setImageUrl(getIntent().getExtras().getString("oyuncuresim4"),imageLoader);
+
+
+        videourl.setText(getIntent().getExtras().getString("video"));
+        Uri video=Uri.parse((String)videourl.getText());
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(video);
+
 
 
     }
