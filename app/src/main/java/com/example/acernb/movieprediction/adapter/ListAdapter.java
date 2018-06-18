@@ -32,6 +32,7 @@ public class ListAdapter extends BaseAdapter implements Filterable {
     ImageLoader imageLoader= AppController.getInstance().getImageLoader();
 
 
+
     public ListAdapter(Activity activity,ArrayList<Movies> moviesItems){
         super();
         this.activity=activity;
@@ -77,18 +78,11 @@ public class ListAdapter extends BaseAdapter implements Filterable {
 
         String basrolStr = "";
         for (String bstr:movies.getBasrol()){
-            basrolStr += bstr + ", ";
-        }
+           basrolStr += bstr + ", ";
+   }
         basrolStr = basrolStr.length()>0 ? basrolStr.substring(0,basrolStr.length()-2):basrolStr;
         filmBasrol.setText(basrolStr);
 
-
-        String genreStr = "";
-        for (String gstr:movies.getTur()){
-            genreStr += gstr + ", ";
-        }
-        genreStr = genreStr.length()>0 ? genreStr.substring(0,genreStr.length()-2):genreStr;
-        filmTur.setText(genreStr);
 
 
 
@@ -97,8 +91,9 @@ public class ListAdapter extends BaseAdapter implements Filterable {
         filmAd.setText(movies.getFilmadi());
         filmAciklama.setText(movies.getAciklama());
         filmTarih.setText("("+String.valueOf(movies.getYil())+")");
-        filmSure.setText(String.valueOf(movies.getSure())+ " " + "|" + " " + filmTur.getText() );
-        filmBasari.setText(String.valueOf(movies.getReyting()));
+        filmSure.setText(String.valueOf(movies.getSure())+ " "+ "Minutes"+" "+"|"+" "+movies.getTur());
+        filmBasari.setText(String.format("%.1f",movies.getPredicate()));
+
 
         return convertView;
 
@@ -124,14 +119,18 @@ public class ListAdapter extends BaseAdapter implements Filterable {
                         movies.setFilmadi(mStringFilterList.get(i).getFilmadi());
                         movies.setRoller(mStringFilterList.get(i).getRoller());
                         movies.setAciklama(mStringFilterList.get(i).getAciklama());
-                        movies.setOyuncular(mStringFilterList.get(i).getOyuncular());
+                        movies.setOyuncuresim(mStringFilterList.get(i).getOyuncuresim());
+                        movies.setOyuncuresim2(mStringFilterList.get(i).getOyuncuresim2());
+                        movies.setOyuncuresim3(mStringFilterList.get(i).getOyuncuresim3());
+                        movies.setOyuncuresim4(mStringFilterList.get(i).getOyuncuresim4());
                         movies.setYil(mStringFilterList.get(i).getYil());
                         movies.setBasrol(mStringFilterList.get(i).getBasrol());
                         movies.setFilmresim(mStringFilterList.get(i).getFilmresim());
-                        movies.setReyting(mStringFilterList.get(i).getReyting());
                         movies.setSure(mStringFilterList.get(i).getSure());
                         movies.setTur(mStringFilterList.get(i).getTur());
                         movies.setYonetmen(mStringFilterList.get(i).getYonetmen());
+                        movies.setPredicate(mStringFilterList.get(i).getPredicate());
+
                         filterList.add(movies);
                     }
                 }
