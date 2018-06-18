@@ -8,34 +8,44 @@ import java.util.ArrayList;
  */
 
 public class Movies  {
-    private String filmadi,filmresim,aciklama,yonetmen,videourl;
-    private int yil,sure;
-    private double reyting;
-    private ArrayList<String> tur;
+   private String filmadi,filmresim,aciklama,yil,tur,videourl;
+    private int sure;
+    private double predicate;
+
+
     private ArrayList<String> basrol;
-    private ArrayList<String> oyuncular;
+    private ArrayList<String> oyuncuresim;
+    private ArrayList<String> oyuncuresim2;
+    private ArrayList<String> oyuncuresim3;
+    private ArrayList<String> oyuncuresim4;
     private ArrayList<String> roller;
+    private ArrayList<String> yonetmen;
 
 
 
     public Movies(){
     }
-    public Movies(String filmadi,String filmresim,String aciklama,String yonetmen,String videourl,int yil,int sure,double reyting,ArrayList<String> tur,ArrayList<String> basrol,ArrayList<String> oyuncular,ArrayList<String> roller){
+    public Movies(String filmadi,String filmresim,String aciklama,String yil,String tur,String videourl,int sure,ArrayList<String> basrol,ArrayList<String> oyuncuresim,ArrayList<String> roller,ArrayList<String> yonetmen,ArrayList<String> oyuncuresim2,ArrayList<String> oyuncuresim3,ArrayList<String> oyuncuresim4,double predicate){
         this.filmadi=filmadi;
         this.filmresim=filmresim;
         this.basrol=basrol;
-        this.oyuncular=oyuncular;
+        this.oyuncuresim=oyuncuresim;
+        this.oyuncuresim2=oyuncuresim2;
+        this.oyuncuresim3=oyuncuresim3;
+        this.oyuncuresim4=oyuncuresim4;
         this.roller=roller;
         this.aciklama=aciklama;
         this.yonetmen=yonetmen;
         this.yil=yil;
         this.sure=sure;
-        this.reyting=reyting;
         this.tur=tur;
         this.videourl=videourl;
+        this.predicate=predicate;
 
 
     }
+
+
 
 
 
@@ -46,18 +56,16 @@ public class Movies  {
     public void setVideourl(String videourl){
         this.videourl=videourl;
     }
-
-
     public String getFilmadi(){
         return filmadi;
     }
     public void setFilmadi(String filmadi){
         this.filmadi=filmadi;
     }
-    public String getYonetmen(){
+    public ArrayList <String> getYonetmen(){
         return yonetmen;
     }
-    public void setYonetmen(String yonetmen){
+    public void setYonetmen(ArrayList<String> yonetmen){
         this.yonetmen=yonetmen;
     }
 
@@ -82,10 +90,10 @@ public class Movies  {
         this.aciklama=aciklama;
     }
 
-    public int getYil(){
+    public String getYil(){
         return yil;
     }
-    public void setYil(int yil){
+    public void setYil(String yil){
         this.yil=yil;
     }
 
@@ -95,31 +103,54 @@ public class Movies  {
     public void setSure(int sure){
         this.sure=sure;
     }
-
-    public double getReyting(){
-        return reyting;
-    }
-    public void setReyting(double reyting){
-        this.reyting=reyting;
-    }
-
-    public ArrayList<String> getTur(){
+    
+    public String getTur(){
         return tur;
     }
-    public void setTur(ArrayList<String> tur){
+    public void setTur(String tur){
         this.tur=tur;
     }
-    public ArrayList<String> getOyuncular(){
-        return oyuncular;
+    public ArrayList<String> getOyuncuresim(){
+        return oyuncuresim;
     }
-    public void setOyuncular(ArrayList<String> oyuncular){
-        this.oyuncular=oyuncular;
+    public void setOyuncuresim(ArrayList<String> oyuncuresim){
+        this.oyuncuresim=oyuncuresim;
     }
+
+    public ArrayList<String> getOyuncuresim2(){
+        return oyuncuresim2;
+    }
+    public void setOyuncuresim2(ArrayList<String> oyuncuresim2){
+        this.oyuncuresim2=oyuncuresim2;
+    }
+
+    public ArrayList<String> getOyuncuresim3(){
+        return oyuncuresim3;
+    }
+    public void setOyuncuresim3(ArrayList<String> oyuncuresim3){
+        this.oyuncuresim3=oyuncuresim3;
+    }
+
+    public ArrayList<String> getOyuncuresim4(){
+        return oyuncuresim4;
+    }
+    public void setOyuncuresim4(ArrayList<String> oyuncuresim4){
+        this.oyuncuresim4=oyuncuresim4;
+    }
+
+
     public ArrayList<String> getRoller(){
         return roller;
     }
     public void setRoller(ArrayList<String> roller){
         this.roller=roller;
+    }
+
+    public double getPredicate(){
+        return predicate;
+    }
+    public void setPredicate(double predicate){
+        this.predicate=predicate;
     }
 
 
